@@ -1,0 +1,32 @@
+name: Docker Push CI
+
+on:
+  push:
+    # This workflow runs on any push event, regardless of branch
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push Docker image
+      run: |
+        IMAGE_NAME=ghcr.io/$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')/my-image-name
+        docker build . --file Dockerfile --tag $IMAGE_NAME:test
+        docker push $IMAGE_NAME:test
+    - name: Run Docker image tests
+      run: |
+        IMAGE_NAME=ghcr.io/$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')/my-image-name
+        echo "Running tests on the Docker image"
+        docker run --rm $IMAGE_NAME:test

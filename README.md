@@ -48,6 +48,10 @@ docker run --rm hello-world
 - `README.md`: This file, containing project documentation
 - `Dockerfile`: Configuration for building a Docker image of the application
 - `.dockerignore`: Specifies files to exclude from the Docker build context
+- `.github/workflows/`: Contains GitHub Actions workflow files:
+  - `basic.yml`: Basic CI workflow for general testing
+  - `docker-image.yml`: Builds Docker image on push/PR to main branch
+  - `docker-push.yml`: Builds Docker image on any push event
 
 ## Expected Output
 
