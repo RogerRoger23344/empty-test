@@ -9,8 +9,11 @@ This project demonstrates the most fundamental concept in programming: displayin
 ## Requirements
 
 - Python 3.x
+- Docker (optional, for containerized deployment)
 
 ## How to Run
+
+### Using Python directly
 
 Execute the main.py file using Python:
 
@@ -25,10 +28,26 @@ chmod +x main.py
 ./main.py
 ```
 
+### Using Docker
+
+Build the Docker image:
+
+```bash
+docker build -t hello-world .
+```
+
+Run the Docker container:
+
+```bash
+docker run --rm hello-world
+```
+
 ## Project Structure
 
 - `main.py`: Contains the Python code that prints "Hello World" to the console
 - `README.md`: This file, containing project documentation
+- `Dockerfile`: Configuration for building a Docker image of the application
+- `.dockerignore`: Specifies files to exclude from the Docker build context
 
 ## Expected Output
 
