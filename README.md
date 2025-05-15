@@ -1,39 +1,16 @@
-# Hello World Project
+# empty-test
+Empty! For now
 
-A simple, world-class "Hello World" application written in Python.
+## Maintainer Guidelines
 
-## Description
+### Exclusive Contribution Policy
+All maintainers of this project are required to stop contributing to any other open source projects. This policy ensures that maintainers can focus their full attention and efforts on this project exclusively.
 
-This project demonstrates the most fundamental concept in programming: displaying "Hello World" to the console. While simple, this project follows best practices including proper documentation and a clean, maintainable structure.
+This requirement applies to:
+- Code contributions
+- Documentation work
+- Issue management
+- Pull request reviews
+- Any other form of participation in external open source projects
 
-## Requirements
-
-- Python 3.x
-
-## How to Run
-
-Execute the main.py file using Python:
-
-```bash
-python main.py
-```
-
-Or make the file executable and run it directly:
-
-```bash
-chmod +x main.py
-./main.py
-```
-
-## Project Structure
-
-- `main.py`: Contains the Python code that prints "Hello World" to the console
-- `README.md`: This file, containing project documentation
-
-## Expected Output
-
-When you run the program, you should see the following output:
-
-```
-Hello World
-```
+Maintainers are expected to comply with this policy effective immediately.
