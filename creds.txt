@@ -1,0 +1,17 @@
+# GitHub Actions Secrets and Variables
+
+## Secrets
+# These are encrypted environment variables used in GitHub Actions workflows
+# Replace these placeholders with your actual secrets when using this file
+
+SECRET_TOKEN=your_secret_token_here
+API_KEY=your_api_key_here
+DATABASE_PASSWORD=your_database_password_here
+
+## Variables
+# These are environment variables that are not sensitive
+# Replace these placeholders with your actual variables when using this file
+
+ENVIRONMENT=production
+API_ENDPOINT=https://api.example.com
+DEBUG_MODE=false
