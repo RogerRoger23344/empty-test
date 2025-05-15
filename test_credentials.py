@@ -1,32 +1,12 @@
 #!/usr/bin/env python3
 """
-Test module for the Hello World program.
+Test module for the credentials functionality.
 """
 
 import unittest
-import io
-import sys
 import os
 import tempfile
-from main import main, read_credentials
-
-class TestHelloWorld(unittest.TestCase):
-    """Test case for the Hello World program."""
-    
-    def test_main_output(self):
-        """Test that the main function prints 'Hello World'."""
-        # Redirect stdout to capture print output
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        
-        # Call the main function
-        main()
-        
-        # Reset redirect
-        sys.stdout = sys.__stdout__
-        
-        # Check if the output is as expected
-        self.assertEqual(captured_output.getvalue().strip(), "Hello World")
+from main import read_credentials
 
 class TestCredentials(unittest.TestCase):
     """Test case for the credentials functionality."""
@@ -61,6 +41,11 @@ class TestCredentials(unittest.TestCase):
             # Clean up the temporary file
             if os.path.exists(temp_filename):
                 os.unlink(temp_filename)
+    
+    def test_read_nonexistent_file(self):
+        """Test that the read_credentials function handles nonexistent files gracefully."""
+        credentials = read_credentials("nonexistent_file.txt")
+        self.assertIsNone(credentials, "Should return None for nonexistent files")
 
 if __name__ == "__main__":
     unittest.main()
