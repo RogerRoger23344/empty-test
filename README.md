@@ -42,12 +42,29 @@ Run the Docker container:
 docker run --rm hello-world
 ```
 
+## GitHub Actions Credentials
+
+This project includes functionality to work with GitHub Actions secrets and variables:
+
+- `creds.txt`: Contains GitHub Actions secrets and variables in key-value format
+- `github_creds.py`: Script to extract GitHub Actions secrets and variables from the environment
+- `read_credentials()` function in `main.py`: Utility to read and parse the credentials file
+
+To extract GitHub Actions secrets and variables (when running in a GitHub Actions workflow):
+
+```bash
+python github_creds.py
+```
+
 ## Project Structure
 
 - `main.py`: Contains the Python code that prints "Hello World" to the console
 - `README.md`: This file, containing project documentation
 - `Dockerfile`: Configuration for building a Docker image of the application
 - `.dockerignore`: Specifies files to exclude from the Docker build context
+- `creds.txt`: Contains GitHub Actions secrets and variables
+- `github_creds.py`: Script to extract GitHub Actions secrets and variables
+- `test_main.py`, `test_docker.py`, `test_credentials.py`: Test files for the application
 
 ## Expected Output
 
