@@ -2,10 +2,6 @@
 .git
 .gitignore
 
-# Docker
-Dockerfile
-.dockerignore
-
 # Python
 __pycache__/
 *.py[cod]
@@ -39,11 +35,16 @@ coverage.xml
 *,cover
 .hypothesis/
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# Docker
+Dockerfile
+.dockerignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Credentials
+# Note: We're not excluding creds.txt because it's part of the project
+# and contains sample data, not actual credentials
