@@ -18,6 +18,17 @@ class TestDocker(unittest.TestCase):
         """Test that the .dockerignore file exists."""
         self.assertTrue(os.path.isfile('.dockerignore'), ".dockerignore should exist")
     
+    def test_creds_file_exists(self):
+        """Test that the creds.txt file exists."""
+        self.assertTrue(os.path.isfile('creds.txt'), "creds.txt should exist")
+    
+    def test_creds_in_dockerignore(self):
+        """Test that creds.txt is included in .dockerignore."""
+        with open('.dockerignore', 'r') as f:
+            dockerignore_content = f.read()
+        self.assertIn('creds.txt', dockerignore_content, 
+                      "creds.txt should be listed in .dockerignore for security")
+    
     def test_docker_build(self):
         """
         Test that the Docker image builds successfully.

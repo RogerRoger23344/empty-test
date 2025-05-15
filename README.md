@@ -48,6 +48,7 @@ docker run --rm hello-world
 - `README.md`: This file, containing project documentation
 - `Dockerfile`: Configuration for building a Docker image of the application
 - `.dockerignore`: Specifies files to exclude from the Docker build context
+- `creds.txt`: Contains GitHub Actions secrets and variables (excluded from Docker builds)
 
 ## Expected Output
 
