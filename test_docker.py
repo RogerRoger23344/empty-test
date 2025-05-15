@@ -37,6 +37,13 @@ class TestDocker(unittest.TestCase):
             text=True
         )
         self.assertEqual(result.returncode, 0, f"Docker build failed: {result.stderr}")
+    
+    def test_docker_workflows_exist(self):
+        """Test that the Docker workflow files exist."""
+        self.assertTrue(os.path.isfile('.github/workflows/docker-image.yml'), 
+                        "docker-image.yml workflow should exist")
+        self.assertTrue(os.path.isfile('.github/workflows/docker-push.yml'), 
+                        "docker-push.yml workflow should exist")
 
 if __name__ == "__main__":
     unittest.main()
